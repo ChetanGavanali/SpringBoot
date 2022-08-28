@@ -25,4 +25,10 @@ public class HelloWebController {
     public String sayHello(@RequestBody User user) {
         return "Hello" + user.getFirstName() + " " + user.getLastName() + "!";
     }
+
+    @PutMapping("/put/{firstname}")
+    public String put (@PathVariable String firstname,
+                       @RequestParam(value = "lastname") String lastName) {
+        return "Hello" + firstname + " " + lastName + "!";
+    }
 }
