@@ -17,4 +17,8 @@ public class HelloWebController {
     public String sayHello(@RequestParam(value = "name", defaultValue = "Chetan") String name) {
         return "Hello" + name + "!";
     }
+    @GetMapping("/param/{name}")
+    public String sayHelloParam(@PathVariable String name) {
+        return "Hello" + name + "!";
+    }
 }
